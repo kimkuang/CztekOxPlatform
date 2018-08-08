@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Icon=/opt/maintainer/maintainer.png
+Name=Maintainer
+Name[zh_CN]=系统维护
+Path=/opt/maintainer/
+Exec=/opt/maintainer/Maintainer
+StartupNotify=true
+Terminal=false
+Categories=System;

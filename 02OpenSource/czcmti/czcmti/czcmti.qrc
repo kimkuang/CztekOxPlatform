@@ -1,0 +1,52 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/disk.png</file>
+        <file>images/exit.png</file>
+        <file>images/help.png</file>
+        <file>images/pause.png</file>
+        <file>images/play.png</file>
+        <file>images/plus.png</file>
+        <file>images/settings.png</file>
+        <file>images/stop.png</file>
+        <file>images/zoom_in.png</file>
+        <file>images/zoom_out.png</file>
+        <file>images/1.png</file>
+        <file>images/2.png</file>
+        <file>images/3.png</file>
+        <file>images/4.png</file>
+        <file>images/5.png</file>
+        <file>images/down.png</file>
+        <file>images/up.png</file>
+        <file>images/fullscreen.png</file>
+        <file>images/arrow_contract.png</file>
+        <file>images/china.png</file>
+        <file>images/usa.png</file>
+        <file>images/project.png</file>
+        <file>images/snap.png</file>
+        <file>images/video_record.png</file>
+        <file>images/video_stop_record.png</file>
+        <file>images/about.png</file>
+        <file>images/check_list.png</file>
+        <file>images/app.png</file>
+        <file>images/app_48.png</file>
+        <file>images/sensor1.png</file>
+        <file>images/sensor2.png</file>
+        <file>images/far_focus.png</file>
+        <file>images/focus.png</file>
+        <file>images/near_focus.png</file>
+        <file>images/open.png</file>
+        <file>images/delete.png</file>
+        <file>images/debug.png</file>
+        <file>images/logo.png</file>
+        <file>images/hint_fail.png</file>
+        <file>images/hint_info.png</file>
+        <file>images/hint_pass.png</file>
+        <file>images/hint_warning.png</file>
+        <file>images/hardware.png</file>
+        <file>images/rgb.png</file>
+        <file>images/edit.png</file>
+    </qresource>
+    <qresource prefix="/shell">
+        <file>res/mount_disk.sh</file>
+    </qresource>
+</RCC>

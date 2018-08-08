@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Recovery
+Exec=/usr/share/upstart/xdg/autostart/czrecovery.sh
+NoDisplay=true
+StartupNotify=false
+Terminal=false
+

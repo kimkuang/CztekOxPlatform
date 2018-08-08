@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Icon=/opt/czcmti/czcmti.png
+Name=CZCMTI
+Name[zh_CN]=模组测试仪
+Path=/opt/czcmti/
+Exec=/opt/czcmti/czcmti
+StartupNotify=false
+Terminal=false
+X-MB-SingleInstance=true
