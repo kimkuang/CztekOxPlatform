@@ -27,7 +27,7 @@
 4. 新建 Pull Request
 
 
-#### 码云特技
+#### 特性
 
 1. 全球首创基于Ubuntu系统的ARM单板电脑（Single Board PC）的模组测试仪，省去图像传输延时，最快帧率输出，提升UPH。
 2. 深圳市辰卓科技有限公司官方网站(http://www.cztek.cn)
