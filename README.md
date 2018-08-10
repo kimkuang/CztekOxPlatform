@@ -2,14 +2,14 @@
 
 ## 项目介绍
 
-[![深圳市辰卓科技有限公司](http://www.cztek.cn/image/cztek_logo_1.png)](http://www.cztek.cn)成立于2013年5月，是一家专注于嵌入式系统产品、工业检测与测试系统产品研发和服务的综合性创新型国家级高新技术企业。
-CztekOxPlatform是深圳市辰卓科技有限公司摄像头模组测试仪维护的一个开源项目，旨在与摄像头测试提供商一起，提升测试效率、提高产品测试良率。
+[![深圳市辰卓科技有限公司](http://www.cztek.cn/image/cztek_logo_1.png)](http://www.cztek.cn)成立于2013年5月，是一家专注于嵌入式系统产品、工业检测与测试系统产品研发和服务的综合性创新型国家级高新技术企业。<br>
+CztekOxPlatform是深圳市辰卓科技有限公司维护的一个摄像头模组测试仪软件开源项目，旨在与摄像头模组提供商一起，提升测试效率、提高产品测试良率。
 
 ## 产品简介
 
 ### CZCM51X系列 MIPI 1.5G摄像头模组测试仪
 <p align="center">
-  ![CZCM51X](/02OpenSource/Doc/Pictures/CZCM517a.png)
+  <img alt="CZCM52X" src="http://www.cztek.cn/product/CZCM517/CZCM517a.png">  
 </p>
 
 ### CZCM52X系列 双摄像头模组测试仪
