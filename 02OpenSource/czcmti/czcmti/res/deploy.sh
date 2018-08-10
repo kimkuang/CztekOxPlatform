@@ -286,16 +286,20 @@ function GetSystemParameters(){
 function GetTargetParameters(){
     if [ "$system_product_name" == "czcm500" ];then
         #内核版本：使用固定数值
+        #版本号的转化：1.5.2 -> 1050002
         if [ "$system_kernel_tree" == "2421" ];then
             target_kernel_version=32
+            target_driver_version=1050004
+            target_dtb_version=2020002
+            target_systemconf_version=1010611
+            target_hal_version=1020416
         elif [ "$system_kernel_tree" == "282" ];then
             target_kernel_version=512
+            target_driver_version=1050002
+            target_dtb_version=2010009
+            target_systemconf_version=1010416
+            target_hal_version=1020622
         fi
-        #版本号的转化：1.5.2 -> 1050002
-        target_driver_version=1050002
-        target_dtb_version=2010009
-        target_systemconf_version=1010416
-        target_hal_version=1020622
     elif [ "$system_product_name" == "czcm800" ];then
         target_kernel_version=205
         target_driver_version=2050009
