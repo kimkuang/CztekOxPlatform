@@ -69,7 +69,10 @@ public:
 
     bool WriteString(const QString &sectionName, const QString &key, const QString &value)
     {
-        return m_iniFile->WriteString(sectionName.toStdString(), key.toStdString(), value.toStdString());
+        bool flag = m_iniFile->WriteString(sectionName.toStdString(), key.toStdString(), value.toStdString());
+        if (flag)
+            m_iniFile->SaveFile();
+        return flag;
     }
 
     int ReadInteger(const QString &sectionName, const QString &key, int defaultValue)
@@ -79,7 +82,10 @@ public:
 
     int WriteInteger(const QString &sectionName, const QString &key, int value)
     {
-        return m_iniFile->WriteInteger(sectionName.toStdString(), key.toStdString(), value);
+        bool flag = m_iniFile->WriteInteger(sectionName.toStdString(), key.toStdString(), value);
+        if (flag)
+            m_iniFile->SaveFile();
+        return flag;
     }
 
     float ReadFloat(const QString &sectionName, const QString &key, float defaultValue)
@@ -89,7 +95,10 @@ public:
 
     bool WriteFloat(const QString &sectionName, const QString &key, float value)
     {
-        return m_iniFile->WriteFloat(sectionName.toStdString(), key.toStdString(), value);
+        bool flag = m_iniFile->WriteFloat(sectionName.toStdString(), key.toStdString(), value);
+        if (flag)
+            m_iniFile->SaveFile();
+        return flag;
     }
 
     bool ReadBool(const QString &sectionName, const QString &key, bool defaultValue)
@@ -99,7 +108,10 @@ public:
 
     bool WriteBool(const QString &sectionName, const QString &key, bool value)
     {
-        return m_iniFile->WriteBool(sectionName.toStdString(), key.toStdString(), value);
+        bool flag = m_iniFile->WriteBool(sectionName.toStdString(), key.toStdString(), value);
+        if (flag)
+            m_iniFile->SaveFile();
+        return flag;
     }
 
     void ReadSection(const QString &section, QMap<QString, QString> &configurations)
