@@ -49,6 +49,7 @@ function UpgradePlugins(){
     cp libOtpSensor.so /opt/czcmti/
     cp libVcmDriver.so /opt/czcmti/
     cp libUiUtils.so /opt/czcmti/
+    cp libCmtiDal.so /opt/czcmti/
     rm -f /opt/czcmti/czcmti
     rm -rf /opt/czcmti/log/*
     cp czcmti /opt/czcmti/
@@ -112,9 +113,9 @@ function UpgradeAdditionPatches(){
         echo "Upgrading CzUtils..."
         echo "ubuntu" | sudo -S cp upgrade/libCzUtils.so /usr/lib/
     fi
-    if [ -e upgrade/libCmtiDal.so ]; then
-        echo "Upgrading CmtiDal..."
-        echo "ubuntu" | sudo -S cp -rf upgrade/libCmtiDal.so /usr/lib/
+    if [ -e /usr/lib/libCmtiDal.so ]; then
+        echo "Removing old CmtiDal..."
+        echo "ubuntu" | sudo -S rm -rf /usr/lib/libCmtiDal.so
     fi
     #检查是否升级Maintainer
     if [ -e upgrade/Maintainer ]; then

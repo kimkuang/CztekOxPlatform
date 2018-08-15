@@ -11,30 +11,38 @@ then
 	MODE="Debug"
 fi
 
+pushd ../libDAL
+qmake && make $1 $2 1> /dev/null
+if [ $? != 0 ]
+then
+	exit 1
+fi
+popd
+
 pushd ./libImageSensor
 qmake && make $1 $2 1> /dev/null
 if [ $? != 0 ]
 then
 	exit 1
 fi
-
 popd
+
 pushd ./libOtpSensor
 qmake && make $1 $2 1> /dev/null
 if [ $? != 0 ]
 then 
 	exit 1
 fi
-
 popd
+
 pushd ./libVcmDriver
 qmake && make $1 $2 1> /dev/null
 if [ $? != 0 ]
 then
 	exit 1
 fi
-
 popd
+
 pushd ./ProtocolHandler
 rm -rf ./lib/$MODE/*.so
 qmake && make $1 $2 1> /dev/null
@@ -42,8 +50,8 @@ if [ $? != 0 ]
 then
 	exit 1
 fi
-
 popd
+
 pushd ./SensorImageDecoder/DecodeToRgb24
 rm -rf ../lib/$MODE/*.so
 qmake && make $1 $2 1> /dev/null
@@ -51,16 +59,16 @@ if [ $? != 0 ]
 then
 	exit 1
 fi
-
 popd
+
 pushd ./czcmti
 qmake && make $1 $2 1> /dev/null
 if [ $? != 0 ]
 then
 	exit 1
 fi
-
 popd
+
 pushd ./CommonTestItem
 rm -rf lib/$MODE/*.so
 qmake && make $1 $2 1> /dev/null
@@ -68,10 +76,11 @@ if [ $? != 0 ]
 then
 	exit 1
 fi
-
 popd
+
 mkdir -p ./bin/$MODE/
 rm -rf ./bin/$MODE/*.so
+cp -rvf ./lib/$MODE/libCmtiDal.so ./bin/$MODE/
 cp -rvf ./lib/$MODE/libOtpSensor.so ./bin/$MODE/
 cp -rvf ./lib/$MODE/libImageSensor.so ./bin/$MODE/
 cp -rvf ./lib/$MODE/libVcmDriver.so ./bin/$MODE/
@@ -83,9 +92,7 @@ cp -rvf ./czcmti/res/deploy.sh ./bin/$MODE/
 chmod u+x ./bin/$MODE/deploy.sh
 cp -rvf ./czcmti/system.db3 ./bin/$MODE/
 
-#cp -rvf ./lib/$MODE/libHal_Ox.so ./bin/$MODE/upgrade/lib/
 cp -rvf ./lib/$MODE/libCzUtils.so /usr/lib/
-#cp -rvf ./lib/$MODE/dual_camera.ko ./bin/$MODE/upgrade/driver/
 
 mkdir -p ./bin/$MODE/plugins/machine/
 rm -rf ./bin/$MODE/plugins/machine/*.so
@@ -111,6 +118,7 @@ if [ -d "./makeself-2.3.1/" ]; then
     echo "making self-running package ..."
     pushd ./makeself-2.3.1/
     chmod u+x *.sh
+    mkdir -p ../../../Release
     ./makeself.sh ../$OBJDIR ../../../Release/czcmti-$1-$MAJOR_VERSION.$MINOR_VERSION.$REVISION_VERSION.$CURTIME.run "czcmti installer." ./deploy.sh
     popd
     printf "\033[01;32mOK...\n"
