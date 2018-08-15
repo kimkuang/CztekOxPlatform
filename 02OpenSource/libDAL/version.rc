@@ -1,0 +1,39 @@
+# if defined(UNDER_CE)
+#  include <winbase.h>
+# else
+#  include <windows.h>
+# endif
+
+VS_VERSION_INFO VERSIONINFO
+	FILEVERSION 1,1,815,1507
+	PRODUCTVERSION 1,1,815,0
+	FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+	FILEFLAGS VS_FF_DEBUG
+#else
+	FILEFLAGS 0x0L
+#endif
+	FILEOS VOS__WINDOWS32
+	FILETYPE VFT_DLL
+	FILESUBTYPE 0x0L
+	BEGIN
+		BLOCK "StringFileInfo"
+		BEGIN
+			BLOCK "040904b0"
+			BEGIN
+				VALUE "CompanyName", "CZTEK\0"
+				VALUE "FileDescription", "CmtiDal\0"
+				VALUE "FileVersion", "1.1.815.1507\0"
+				VALUE "LegalCopyright", "All copyrights are reserved.\0"
+				VALUE "OriginalFilename", "CmtiDal.dll\0"
+				VALUE "ProductName", "CmtiDal\0"
+				VALUE "ProductVersion", "1.1.815.0\0"
+			END
+		END
+		BLOCK "VarFileInfo"
+		BEGIN
+			VALUE "Translation", 0x0409, 1200
+		END
+	END
+/* End of Version info */
+

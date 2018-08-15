@@ -19,15 +19,12 @@ public:
     bool LoadFromFile(Sensor &sensor, const QString &fileName);
     void FileVersion(QString &fileVersion);
 
-signals:
-
-public slots:
-
 private:
     QFile m_file;
     QTextStream m_textStream;
     QString m_fileVersion;
 
+    void removeLineComment(QString &newContent, const QString &oldContent, const QString &commentMark);
     bool generateCommentPart(QString &commentPart);
     bool getSection(const QString &fileContent, const QString &sectionName, QString &sectionContent);
 };

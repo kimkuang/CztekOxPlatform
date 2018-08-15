@@ -11,14 +11,11 @@ class LIBRARY_API SqlDatabaseUtil
 public:
     static bool CreateDbConnections(const QString &connectionName, const QString &connectionString,
                                     bool isEncrypted = true);
-    static QString GetDatabaseKey();
     static QSqlDatabase GetDatabase(const QString &connectionName);
-
-public:
-    static QString TangShi;
 
 private:
     SqlDatabaseUtil();
+    static void parseStringToKeyValueMap(QMap<QString, QString> &keyValMap, const QString &str, const QString &sep);
 };
 
 #endif // SQLDATABASEUTIL_H
