@@ -1,4 +1,4 @@
-﻿
+
 #define VCM_DRV_ZC524
 
 #include "VcmDriver_ZC524.h"
@@ -19,7 +19,7 @@ int VcmDriver_ZC524::VcmInitialize()
     uint regNum = sizeof(regAddrs)/sizeof(regAddrs[0]);
     if (ERR_NoError != m_channelController->WriteDiscreteI2c(m_i2cAddr, 100, RB_ADDR8_DATA8, regAddrs, regVals, regNum))
     {
-        strLog = QString::asprintf("VcmDriver_DW9714::%s---WriteDiscreteI2c Error\r\n", __FUNCTION__);
+        strLog.sprintf("VcmDriver_DW9714::%s---WriteDiscreteI2c Error\r\n", __FUNCTION__);
         m_channelController->LogToWindow(strLog, qRgb(255, 0, 0));
         return ERR_Failed;
     }
@@ -70,7 +70,7 @@ int VcmDriver_ZC524::VcmWriteCode(uint value)
         }
     }
 
-    strLog = QString::asprintf("VcmDriver_DW9714::%s---WriteDiscreteI2c Error\r\n", __FUNCTION__);
+    strLog.sprintf("VcmDriver_DW9714::%s---WriteDiscreteI2c Error\r\n", __FUNCTION__);
     m_channelController->LogToWindow(strLog, qRgb(255, 0, 0));
     return ERR_Failed;
 }

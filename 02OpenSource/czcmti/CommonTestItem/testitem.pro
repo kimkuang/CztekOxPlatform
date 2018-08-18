@@ -4,6 +4,7 @@ SUBDIRS       = OpenShort \
     Shading5 \
     DParticle \
     AE \
+    AF \
     VCMTest \
     AF_MoveToPos \
     DelayTime

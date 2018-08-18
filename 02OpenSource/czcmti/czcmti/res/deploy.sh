@@ -113,6 +113,11 @@ function UpgradeAdditionPatches(){
         echo "Upgrading CzUtils..."
         echo "ubuntu" | sudo -S cp upgrade/libCzUtils.so /usr/lib/
     fi
+    #检查是否升级libCmtiAlgorithm
+    if [ -e upgrade/libCmtiAlgorithm.so ]; then
+        echo "Upgrading CmtiAlgorithm..."
+        echo "ubuntu" | sudo -S cp upgrade/libCmtiAlgorithm.so /usr/lib/
+    fi
     if [ -e /usr/lib/libCmtiDal.so ]; then
         echo "Removing old CmtiDal..."
         echo "ubuntu" | sudo -S rm -rf /usr/lib/libCmtiDal.so

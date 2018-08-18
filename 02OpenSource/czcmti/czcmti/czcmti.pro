@@ -175,18 +175,18 @@ else {
         common/UdevManager.h \
         thread/UdevMonitor.h
 
-    LIBS += -L$$PWD/../lib/$${CONFIG_DIR}
+    LIBS += -L$$PWD/../lib/$${CONFIG_DIR} -Wl,-rpath=.
 }
 
 LIBS += -lCzUtils
 INCLUDEPATH += $$PWD/../../libCzUtils
-LIBS += -lUiUtils -Wl,-rpath=.
+LIBS += -lUiUtils
 INCLUDEPATH += $$PWD/../libUiUtils
-LIBS += -lImageSensor -Wl,-rpath=.
+LIBS += -lImageSensor
 INCLUDEPATH += $$PWD/../libImageSensor
-LIBS += -lOtpSensor -Wl,-rpath=.
+LIBS += -lOtpSensor
 INCLUDEPATH += $$PWD/../libOtpSensor
-LIBS += -lVcmDriver -Wl,-rpath=.
+LIBS += -lVcmDriver
 INCLUDEPATH += $$PWD/../libVcmDriver
 
 # database access module

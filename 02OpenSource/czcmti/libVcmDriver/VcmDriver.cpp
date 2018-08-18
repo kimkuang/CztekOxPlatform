@@ -144,7 +144,7 @@ int VcmDriver::BindChannelContext(T_ChannelContext *context)
 
     if (nullptr == context)
     {
-        strLog = QString::asprintf("VcmDriver::%s context is NULL", __FUNCTION__);
+        strLog.sprintf("VcmDriver::%s context is NULL", __FUNCTION__);
         m_channelController->LogToWindow(strLog, qRgb(255,0,0));
         return ERR_Failed;
     }
@@ -153,7 +153,7 @@ int VcmDriver::BindChannelContext(T_ChannelContext *context)
     m_channelController = context->ChannelController;
     if (nullptr == m_channelController)
     {
-        strLog = QString::asprintf("VcmDriver::%s m_channelController is NULL", __FUNCTION__);
+        strLog.sprintf("VcmDriver::%s m_channelController is NULL", __FUNCTION__);
         m_channelController->LogToWindow(strLog, qRgb(255,0,0));
         return ERR_Failed;
     }

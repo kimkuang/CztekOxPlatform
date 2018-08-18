@@ -1,4 +1,4 @@
-﻿
+
 /**
   * DW9714的操作模式分为Normal Mode和Advanced Mode两种，这两种的I2C操作方式是不一样的。查看手册时，仔细查看，发现这两种模式的I2C时序描述不同，具体为：
   *     1、Normal Mode：根据手册描述，I2C时序图中看不出有【寄存器地址】这个字节，而是采用【起始 + 芯片地址 + 寄存器1 + 寄存器2 + 停止】波形序列。
@@ -29,7 +29,7 @@ int VcmDriver_DW9714::VcmInitialize()
     uint regNum = sizeof(regAddrs)/sizeof(regAddrs[0]);
     if (ERR_NoError != m_channelController->WriteDiscreteI2c(m_i2cAddr, 100, RB_ADDR8_DATA8, regAddrs, regVals, regNum))
     {
-        strLog = QString::asprintf("VcmDriver_DW9714::%s---WriteDiscreteI2c Error\r\n", __FUNCTION__);
+        strLog.sprintf("VcmDriver_DW9714::%s---WriteDiscreteI2c Error\r\n", __FUNCTION__);
         m_channelController->LogToWindow(strLog, qRgb(255, 0, 0));
         return ERR_Failed;
     }
@@ -108,7 +108,7 @@ int VcmDriver_DW9714::VcmWriteCode(uint value)
         }
     }
 
-    strLog = QString::asprintf("VcmDriver_DW9714::%s---WriteDiscreteI2c Error\r\n", __FUNCTION__);
+    strLog.sprintf("VcmDriver_DW9714::%s---WriteDiscreteI2c Error\r\n", __FUNCTION__);
     m_channelController->LogToWindow(strLog, qRgb(255, 0, 0));
     return ERR_Failed;
 }

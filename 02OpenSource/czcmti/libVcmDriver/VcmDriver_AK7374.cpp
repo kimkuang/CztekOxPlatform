@@ -16,7 +16,7 @@ int VcmDriver_AK7374::VcmInitialize()
     uchar AFVal = 0x00;
     if (ERR_NoError != m_channelController->WriteContinuousI2c(m_i2cAddr, 100, 0x02, 1, &AFVal, sizeof(AFVal)))
     {
-        strLog = QString::asprintf("VcmDriver_AK7374::%s---I2cWrite Error\r\n", __FUNCTION__);
+        strLog.sprintf("VcmDriver_AK7374::%s---I2cWrite Error\r\n", __FUNCTION__);
         m_channelController->LogToWindow(strLog, qRgb(255, 0, 0));
         return ERR_Failed;
     }
