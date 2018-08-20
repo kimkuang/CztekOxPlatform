@@ -6,11 +6,11 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    QString testImgFileName = qApp->applicationDirPath() + "/image/SFR_2608x1960_10bit.raw";
+    QString testImgFileName = qApp->applicationDirPath() + "/../image/ROI0GrayScale_96x96_10bit.raw";
 
     Test_SFR testSFR;
-    int iImgW = 2608;
-    int iImgH = 1960;
+    int iImgW = 96;
+    int iImgH = 96;
     int nBytesPerPixel = 2;
     int len = iImgW * iImgH * nBytesPerPixel;
     uchar *pImg = new uchar[len];
